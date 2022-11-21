@@ -4,8 +4,14 @@ import com.skypro.hw_spring.model.Employee;
 import com.skypro.hw_spring.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class EmployeeService {
@@ -16,16 +22,15 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {
-        if (employeeRequest.getFirstName() == null || employeeRequest.getLastName() == null) {
-            throw new IllegalArgumentException("Имя/фамилия должны быть заполнены!");
+        try {
+            Employee employee = new Employee(employeeRequest.getLastName(),
+                    employeeRequest.getLastName(), employeeRequest.getDepartment(),
+                    employeeRequest.getSalary());
+            employees.put(employee.getId(), employee);
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         }
-
-        Employee employee = new Employee(employeeRequest.getLastName(),
-                employeeRequest.getLastName(), employeeRequest.getDepartment(),
-                employeeRequest.getSalary());
-        employees.put(employee.getId(), employee);
-
-        return employee;
+        return null;
     }
 
     public int getSalarySum() {
