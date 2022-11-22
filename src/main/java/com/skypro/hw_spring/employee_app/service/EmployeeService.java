@@ -1,7 +1,7 @@
-package com.skypro.hw_spring.service;
+package com.skypro.hw_spring.employee_app.service;
 
-import com.skypro.hw_spring.model.Employee;
-import com.skypro.hw_spring.record.EmployeeRequest;
+import com.skypro.hw_spring.employee_app.model.Employee;
+import com.skypro.hw_spring.employee_app.record.EmployeeRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
