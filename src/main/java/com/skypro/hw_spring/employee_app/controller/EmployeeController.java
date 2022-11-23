@@ -3,10 +3,12 @@ package com.skypro.hw_spring.employee_app.controller;
 import com.skypro.hw_spring.employee_app.service.EmployeeService;
 import com.skypro.hw_spring.employee_app.model.Employee;
 import com.skypro.hw_spring.employee_app.record.EmployeeRequest;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Collection;
 import java.util.List;
@@ -26,7 +28,11 @@ public class EmployeeController {
 
     @PostMapping("/employees")
     public Employee createEmployee(@RequestBody EmployeeRequest employeeRequest) {
-        return employeeService.addEmployee(employeeRequest);
+        try {
+            return employeeService.addEmployee(employeeRequest);
+        } catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Фамилия/имя должны быть заполнены!", e);
+        }
     }
 
     @GetMapping("/employees/salary/sum")

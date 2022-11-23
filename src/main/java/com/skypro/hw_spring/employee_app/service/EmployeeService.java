@@ -22,15 +22,11 @@ public class EmployeeService {
     }
 
     public Employee addEmployee(EmployeeRequest employeeRequest) {
-        try {
-            Employee employee = new Employee(employeeRequest.getLastName(),
+            Employee employee = new Employee(employeeRequest.getFirstName(),
                     employeeRequest.getLastName(), employeeRequest.getDepartment(),
                     employeeRequest.getSalary());
             employees.put(employee.getId(), employee);
-        } catch (IllegalArgumentException e) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        }
-        return null;
+            return employee;
     }
 
     public int getSalarySum() {
