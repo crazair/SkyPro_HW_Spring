@@ -1,0 +1,10 @@
+### Добавить в корзину товары
+POST http://localhost:9090/store/order/add
+Content-Type: application/json
+
+[100,200,300,400,500]
+
+### Получить все товары
+GET http://localhost:9090/store/order/get
+
+
