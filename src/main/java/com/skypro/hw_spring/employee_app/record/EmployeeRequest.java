@@ -1,4 +1,4 @@
-package com.skypro.hw_spring.record;
+package com.skypro.hw_spring.employee_app.record;
 
 public class EmployeeRequest {
     private String firstName;

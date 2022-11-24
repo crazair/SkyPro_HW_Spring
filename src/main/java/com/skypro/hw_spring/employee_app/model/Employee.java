@@ -1,4 +1,4 @@
-package com.skypro.hw_spring.model;
+package com.skypro.hw_spring.employee_app.model;
 
 import org.apache.commons.lang3.StringUtils;
 
