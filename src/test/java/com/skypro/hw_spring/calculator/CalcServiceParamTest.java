@@ -1,4 +1,4 @@
-package com.skypro.hw_spring;
+package com.skypro.hw_spring.calculator;
 
 import com.skypro.hw_spring.calculator.service.CalculatorService;
 import org.junit.jupiter.api.BeforeEach;

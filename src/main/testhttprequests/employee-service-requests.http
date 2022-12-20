@@ -22,7 +22,7 @@ Content-Type: application/json
   "salary": 10000
 }
 ### Создать сотрудника
-POST http://localhost:8080/employees
+POST http://localhost:9090/employees
 Content-Type: application/json
 
 {
@@ -32,13 +32,29 @@ Content-Type: application/json
   "salary": 7000
 }
 ### Получить сумму зарплат
-GET http://localhost:8080/employees/salary/sum
+GET http://localhost:9090/employees/salary/sum
 
 ### Получение сотрудника с минимальной зарплатой
-GET http://localhost:8080/employee/salary/min
+GET http://localhost:9090/employee/salary/min
 
 ### Получение сотрудника с максимальной зарплатой
-GET http://localhost:8080/employee/salary/max
+GET http://localhost:9090/employee/salary/max
 
 ### Получение всех сотрудников, зарплата которых больше средней зарплаты
-GET http://localhost:8080/employee/high-salary
+GET http://localhost:9090/employee/high-salary
+
+
+### Получение списка сотрудников по департаменту
+GET http://localhost:9090/department/2/employees
+
+### Получение суммы зарплат по департаменту
+GET http://localhost:9090/department/2/salary/sum
+
+### Получение максимальной зарплаты по департаменту
+GET http://localhost:9090/department/2/salary/max
+
+### Получение минимальной зарплаты по департаменту
+GET http://localhost:9090/department/2/salary/min
+
+### Получение списка сотрудников, сгруппированных по департаментам
+GET http://localhost:9090/department/employees
