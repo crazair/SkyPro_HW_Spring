@@ -1,0 +1,31 @@
+### Добавить вопрос
+GET http://localhost:9090/exam/java/add?question=SuperQuestion1&answer=SuperQuestion1Answer
+
+### Добавить вопрос
+GET http://localhost:9090/exam/java/add?question=SuperQuestion2&answer=SuperQuestion2Answer
+
+### Добавить вопрос
+GET http://localhost:9090/exam/java/add?question=SuperQuestion3&answer=SuperQuestion3Answer
+
+### Добавить вопрос
+GET http://localhost:9090/exam/java/add?question=SuperQuestion4&answer=SuperQuestion4Answer
+
+### Получить все вопросы
+GET http://localhost:9090/exam/java
+
+### Удалить вопрос
+GET http://localhost:9090/exam/java/remove?question=SuperQuestion4&answer=SuperQuestion4Answer
+
+### Получить случайные вопросы
+GET http://localhost:9090/exam/random/10
+
+
+
+### Добавить вопрос
+GET http://localhost:9090/exam/math/add?question=SuperQuestion&answer=SuperQuestionAnswer
+
+### Получить все вопросы
+GET http://localhost:9090/exam/math/
+
+### Удалить вопрос
+GET http://localhost:9090/exam/math/remove?question=QuestionText-1&answer=QuestionAnswer-1
